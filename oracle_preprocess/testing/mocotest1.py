@@ -13,6 +13,6 @@ def compare_ids(json_file1, json_file2):
             print(f"ID: {id_}, N1: {number1}, N2: {number2}")
 
 # Example usage:
-json_file1 = '/Users/michelleding/Desktop/oracle/HUST-OBS/MoCo/dict1_count'  # Replace 'your_json_file1.json' with the path to the first JSON file
-json_file2 = '/Users/michelleding/Desktop/oracle/HUST-OBS/MoCo/dict2_count'  # Replace 'your_json_file2.json' with the path to the second JSON file
+json_file1 = '/Users/michelleding/Desktop/oracle/HUST-OBS/MoCo/dict1_count' 
+json_file2 = '/Users/michelleding/Desktop/oracle/HUST-OBS/MoCo/dict2_count' 
 compare_ids(json_file1, json_file2)

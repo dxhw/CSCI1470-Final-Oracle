@@ -1,34 +1,15 @@
 import json
+# =============================================================================
+# This class takes MOCO_train.json and creates two new jsons 
+# 1. label_dict.json (id -> paths)
+# 2. label_dict_sources.json (id -> source -> path)
 
-def json_shape(json_file):
-    # f = open (json_file, "r")
-    # data = json.loads(f.read())
-    # print(data)
-    # f.close()
-    with open(json_file, 'r', encoding='utf-8') as f:
-        data = json.load(f)
-    
-    if isinstance(data, list):
-        # If data is a list of items
-        rows = len(data)
-        if rows > 0:
-            cols = len(data[0].keys())
-        else:
-            cols = 0
-    elif isinstance(data, dict):
-        # If data is a dictionary
-        rows = 1
-        cols = len(data.keys())
-    else:
-        # If data is neither list nor dictionary
-        rows = 0
-        cols = 0
-    
-    return rows, cols
-
+# NOTE: all paths are currently absolute paths not relative paths 
+# =============================================================================
+# ================== LABEL_DICT ===============================================
 def create_label_dict(json_file):
     label_dict = {}
-    with open(json_file, 'r', encoding='utf-8') as f:
+    with open(json_file, 'r') as f:
         data = json.load(f)
     
     for item in data:
@@ -42,13 +23,15 @@ def create_label_dict(json_file):
     return label_dict
 
 def save_label_dict(label_dict, output_file):
-    with open(output_file, 'w', encoding='utf-8') as f:
+    with open(output_file, 'w') as f:
         json.dump(label_dict, f, indent=4)
 
+# =============================================================================
+# ================== LABEL_DICT_sources =======================================
 '''Making label dict with sources'''
 def create_label_dict2(json_file):
     label_dict = {}
-    with open(json_file, 'r', encoding='utf-8') as f:
+    with open(json_file, 'r') as f:
         data = json.load(f)
     
     for item in data:
@@ -66,20 +49,18 @@ def create_label_dict2(json_file):
     return label_dict
 
 def save_label_dict2(label_dict, output_file):
-    with open(output_file, 'w', encoding='utf-8') as f:
+    with open(output_file, 'w') as f:
         json.dump(label_dict, f, indent=4)
 
-# Example usage:
-json_file = '/Users/michelleding/Desktop/oracle/HUST-OBS/MoCo/MOCO_train.json'  
-rows, cols = json_shape(json_file)
-print(f"JSON shape: {rows} rows x {cols} columns")
+# =============================================================================
 
-# CREATING A JSON OF ID -> SOURCES
+json_file = '/Users/michelleding/Desktop/oracle/HUST-OBS/MoCo/MOCO_train.json'  
+# CREATING A JSON OF ID -> SOURCES (LABEL_DICT.JSON)
 label_dict = create_label_dict(json_file)
 output_file = 'label_dict.json'
 save_label_dict(label_dict, output_file)
 
-# CREATING A JSON OF ID->SOURCES->[PATHS]
+# CREATING A JSON OF ID->SOURCES->[PATHS] (LABEL_DICT_SOURCES.JSON)
 output_file2 = 'label_dict_sources.json'
 label_dict2 = create_label_dict2(json_file)
 save_label_dict2(label_dict2, output_file2)
