@@ -26,7 +26,7 @@ def save_file(dict, output_file):
         json.dump(dict, f, indent=4)
 
 
-directory = 'source_json'
+directory = 'oracle_preprocess/JSON_SOURCES'
 
 # Ensure the directory exists, if not, create it
 if not os.path.exists(directory):
