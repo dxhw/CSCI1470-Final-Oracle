@@ -93,7 +93,7 @@ def make_csv(run: str, train:list, test:list):
     
     # ===================== CREATE TRAIN CSV =====================
     train_headers = ["label", "path"]
-    with open(train_file, 'w', newline='') as csv_file:
+    with open(train_path, 'w', newline='') as csv_file:
         writer = csv.writer(csv_file)
         writer.writerow(train_headers)
 
@@ -111,7 +111,7 @@ def make_csv(run: str, train:list, test:list):
     
     # ===================== CREATE TEST CSV =====================
     test_headers = ["label", "path"]
-    with open(test_file, 'w', newline='') as csv_file:
+    with open(test_path, 'w', newline='') as csv_file:
         writer = csv.writer(csv_file)
         writer.writerow(test_headers)
 
