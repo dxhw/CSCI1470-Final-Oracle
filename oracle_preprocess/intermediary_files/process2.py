@@ -25,10 +25,46 @@ for s in source_list:
     id_dict[s] = l
     id_dict_shape[s] = len(l)
 
-print(id_dict_shape)
+# id_dict["M1"] = [1,2,3]
+# id_dict["M2"] = [1,4]
+# id_dict["M3"] = [1,2,5,6]
 
 '''
 Returns set of ids where test contains train 
 '''
 def return_overlapping(train:list, test:list):
-    pass
+    # train = [H,G,L,Y]
+    # test = X
+    # make train set
+    train_list = []
+    for s in train:
+        train_list += id_dict[s]
+    train_set = set(train_list)
+
+    # make test set 
+    test_list = []
+    for p in test:
+        test_list += id_dict[p]
+    test_set = set(test_list)
+
+    # get list of elements to remove
+    filtered_test_set = set(test_set)
+    removed_list = []
+    for id in test_set:
+        if id not in train_set:
+            removed_list.append(id)
+            filtered_test_set.remove(id)
+    
+    print("=== TRAIN:", train, "TEST:", test, "===")
+    print(">> train set:", len(train_set))
+    print(">> test set:", len(test_set))
+    print(">> filtered_test set:", len(filtered_test_set))
+    print(">> removed list:", len(removed_list))
+    
+    return train_set, filtered_test_set, removed_list
+
+# return_overlapping(["M1", "M2"], ["M3"])
+# return_overlapping(["H","X","L","Y"], ["G"])
+# return_overlapping(["H","G","L","Y"], ["X"])
+# return_overlapping(["H","X","G"], ["L","Y"])
+
