@@ -85,10 +85,10 @@ def make_csv(run: str, train:list, test:list):
     if not os.path.exists(directory):
         os.makedirs(directory)
 
-    train_file = "train" + run+ '.csv'
+    train_file = "train" + run + "-" + ''.join(train)+ '.csv'
     train_path = os.path.join(directory, train_file)
 
-    test_file =  "test" + run + '.csv'
+    test_file =  "test" + run + "-" + ''.join(test) + '.csv'
     test_path = os.path.join(directory, test_file)
     
     # ===================== CREATE TRAIN CSV =====================
@@ -132,6 +132,6 @@ def make_csv(run: str, train:list, test:list):
 
     print("csvs created")
 
-make_csv("A", ["H","X","L","Y"], ["G"])
-make_csv("B", ["H","G","L","Y"], ["X"])
-make_csv("C", ["H","X","G"], ["L","Y"])
+make_csv("1", ["H","X","L","Y"], ["G"])
+make_csv("2", ["H","G","L","Y"], ["X"])
+make_csv("3", ["H","X","G"], ["L","Y"])
