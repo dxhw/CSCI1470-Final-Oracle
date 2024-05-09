@@ -1,6 +1,8 @@
 test = "/Users/michelleding/Desktop/oracle/CSCI1470-Final-Oracle/oracle_preprocess/intermediary_files/agg_data/Validation_test.json"
 train = "/Users/michelleding/Desktop/oracle/CSCI1470-Final-Oracle/oracle_preprocess/intermediary_files/agg_data/Validation_train.json"
-
+# =============================================================================
+# Process the original json dataset filepaths 
+# =============================================================================
 import json, csv, os
 
 def write_csv(csv_name, path):

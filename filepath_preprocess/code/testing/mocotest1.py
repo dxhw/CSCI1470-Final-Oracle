@@ -1,4 +1,7 @@
 import json 
+# =============================================================================
+# more testing to make sure that IDs are correct
+
 def compare_ids(json_file1, json_file2):
     with open(json_file1, 'r', encoding='utf-8') as f1, open(json_file2, 'r', encoding='utf-8') as f2:
         data1 = json.load(f1)

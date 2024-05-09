@@ -1,6 +1,8 @@
 
 # =================================================================================
 # =========================== TESTING  =============================================
+# test that each json has the correct ocunt 
+
 import json
 
 def print_item_counts(json_file):

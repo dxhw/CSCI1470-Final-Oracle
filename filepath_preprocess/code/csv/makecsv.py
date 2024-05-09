@@ -1,7 +1,8 @@
 import json
 import csv
-
-
+# =============================================================================
+# Make a CSV with the number of images count for each source 
+# =============================================================================
 # Load JSON data
 with open('/Users/michelleding/Desktop/oracle/HUST-OBS/MoCo/label_dict_sources.json') as json_file:
     data = json.load(json_file)

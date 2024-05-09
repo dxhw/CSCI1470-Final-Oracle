@@ -1,6 +1,9 @@
 import csv, json, os
 import pandas as pd
-
+# =============================================================================
+# Making CSVs of label-> path for each of the 3 groups; removing unique characters
+# from test set that's not contained in train set
+# =============================================================================
 # get array of IDs that each source has 
 file = "/Users/michelleding/Desktop/oracle/CSCI1470-Final-Oracle/oracle_preprocess/intermediary_files/csv/output.csv"
 df = pd.read_csv(file) 

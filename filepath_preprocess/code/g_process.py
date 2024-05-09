@@ -1,5 +1,8 @@
 import json,os
-
+# =============================================================================
+# Changing file paths in the G data source from utf-8 to Chinese words to match
+# google drive file path names 
+# =============================================================================
 g_path = "/Users/michelleding/Desktop/oracle/CSCI1470-Final-Oracle/oracle_preprocess/JSON_SOURCES/G.json"
 
 def make_g_json():

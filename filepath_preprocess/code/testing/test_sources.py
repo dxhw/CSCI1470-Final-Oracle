@@ -1,6 +1,8 @@
 # TESTING TO MAKE SURE THE 5 JSON SOURCES HAVE THE CORRECT NUMBER OF IMAGES
 import json 
-
+# =============================================================================
+# Test that each json has the correct count 
+# =============================================================================
 G_path = "/Users/michelleding/Desktop/oracle/CSCI1470-Final-Oracle/oracle_preprocess/JSON_SOURCES/G.json"
 H_path = "/Users/michelleding/Desktop/oracle/CSCI1470-Final-Oracle/oracle_preprocess/JSON_SOURCES/H.json"
 L_path = "/Users/michelleding/Desktop/oracle/CSCI1470-Final-Oracle/oracle_preprocess/JSON_SOURCES/L.json"
