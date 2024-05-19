@@ -8,6 +8,6 @@ Folders:
 
 - Model: code for our Resnet50 model
 - Visualization: code for visualizing results
-- Filepath_preprocess: code for preprocessing the filepaths to data & creating 4 groups fo datasets
+- Filepath_preprocess: code for preprocessing the filepaths to data & creating 4 groups of datasets
 - Data_preprocess: code for preprocessing the dataset (image & labels)
 
